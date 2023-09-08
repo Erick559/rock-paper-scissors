@@ -15,7 +15,7 @@ function getComputerchoice(){
 
 // Function that takes the user's choice and the computer's and returns the winner://
 
-function oneRound(computerSelection, playerSelection){
+function playRound(computerSelection, playerSelection){
     computerSelection = getComputerchoice();
 
     if (computerSelection == 'rock' && playerSelection == 'scissors'){
@@ -55,9 +55,11 @@ console.log(oneRound(getComputerchoice(),playerSelection));
 
 
 // A five round game that takes the oneRound function and returns the winner for 5 rounds.
+// It has a for loop that has an incremental value `round` that increases to 5 rounds and ends once if reaches 5 rounds.
+
 function game(){
     for (round=0; round<=5; round++){
-        return oneRound();
+        playRound();
     }
 }
 
