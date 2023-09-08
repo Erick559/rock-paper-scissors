@@ -48,9 +48,19 @@ function oneRound(computerSelection, playerSelection){
     }
 }
 
-// The user inserts their prefered move to play: 
+// The user inserts their prefered move to play: Should be case insesitive;
 const playerSelection = 'paper';
 
 console.log(oneRound(getComputerchoice(),playerSelection));
+
+
+// A five round game that takes the oneRound function and returns the winner for 5 rounds.
+function game(){
+    for (round=0; round<=5; round++){
+        return oneRound();
+    }
+}
+
+console.log(game())
 
 
