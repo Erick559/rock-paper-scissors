@@ -5,6 +5,7 @@
 const choices = ['rock' , 'paper', 'scissors'];
 const randomChoices = Math.floor(Math.random() * choices.length);
 
+
 // Function to get the computers rendomized choice between rock,paper or scissors://
 
 function getComputerchoice(){
@@ -49,17 +50,23 @@ function playRound(computerSelection, playerSelection){
 }
 
 // The user inserts their prefered move to play: Should be case insesitive;
-const playerSelection = 'paper';
 
-console.log(oneRound(getComputerchoice(),playerSelection));
+
+// console.log(playRound(getComputerchoice()));
 
 
 // A five round game that takes the oneRound function and returns the winner for 5 rounds.
 // It has a for loop that has an incremental value `round` that increases to 5 rounds and ends once if reaches 5 rounds.
 
+
+
 function game(){
-    for (round=0; round<=5; round++){
-        playRound();
+    for (let round = 0; round < 5; round++){
+        const playerSelection = 'paper';
+
+        const result = playRound(playerSelection);
+
+        console.log(`Round ${round+1}: ${result}`)
     }
 }
 
