@@ -3,15 +3,15 @@
 // The randomChoices variable stores the randomized selection; 
 
 const choices = ['rock', 'paper', 'scissors'];
-const randomChoices = Math.floor(Math.random() * choices.length);
+// const randomChoices = Math.floor(Math.random() * choices.length);
 
 
-// Function to get the computers rendomized choice between rock,paper or scissors://
+// Function to get the computers randomized choice between rock,paper or scissors://
 
 function getComputerchoice() {
-    let computerChoice = choices[randomChoices];
-
-    return computerChoice;
+    // let computerChoice = choices[randomChoices];
+    const randomChoices = Math.floor(Math.random() * choices.length);
+    return choices[randomChoices];
 }
 
 // Function that takes the user's choice and the computer's and returns the winner://
@@ -47,7 +47,6 @@ function playRound(computerSelection) {
 // The user inserts their preferred move to play: Should be case insensitive;
 const playerSelection = prompt("Enter your play:").toLowerCase();
 
-// console.log(playRound(getComputerchoice()));
 
 
 // A five round game that takes the oneRound function and returns the winner for 5 rounds.
@@ -55,12 +54,22 @@ const playerSelection = prompt("Enter your play:").toLowerCase();
 
 // function game() {
 //     for (let round = 0; round < 5; round++) {
-//         const playerSelection = 'paper';
 
-//         const result = playRound(playerSelection);
+//         const result = playRound();
 
-//         console.log(`Round ${round+1}: ${result}`)
+//         console.log(`Round ${round+1}: ${result}`);
 //     }
 // }
-// playerSelection = 'Paper';
-console.log(playRound())
+
+
+function game() {
+    for (let round = 0; round <= 5; round++) {
+        const playerSelection = prompt("Enter your play:").toLowerCase();
+        const computerSelection = getComputerchoice(); // Corrected function name
+        const result = playRound(playerSelection, computerSelection);
+
+        console.log(`Round ${round + 1}: ${result}`);
+    }
+}
+
+console.log(game())
