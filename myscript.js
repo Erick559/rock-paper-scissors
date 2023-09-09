@@ -21,24 +21,24 @@ function playRound(computerSelection) {
 
     if (computerSelection == 'rock' && playerSelection == 'scissors') {
         let winner = 'Computer';
-        return `${winner} wins!! Rock beats Scissors.`;
+        return `You suck!! ${winner} wins!! Rock beats Scissors.`;
     } else if (computerSelection == 'scissors' && playerSelection == 'paper') {
         winner = 'Computer';
-        return `${winner} wins!! Scissors beats Paper.`;
+        return `You suck!! ${winner} wins!! Scissors beats Paper.`;
     } else if (computerSelection == 'paper' && playerSelection == 'rock') {
         winner = 'Computer';
-        return `${winner} wins!! Paper beats Rock.`;
+        return `You suck!! ${winner} wins!! Paper beats Rock.`;
     } else if (computerSelection == 'rock' && playerSelection == 'paper') {
         winner = 'User';
-        return `${winner} wins!! Paper beats Rock.`;
+        return `Cool!!! ${winner} wins!! Paper beats Rock.`;
     } else if (computerSelection == 'scissors' && playerSelection == 'rock') {
         winner = 'User';
-        return `${winner} wins!! Rock beats Scissors.`;
+        return `Cool!!! ${winner} wins!! Rock beats Scissors.`;
     } else if (computerSelection == 'paper' && playerSelection == 'scissors') {
         winner = 'User';
-        return `${winner} wins!! Scissors beats Paper.`;
+        return `Cool!!! ${winner} wins!! Scissors beats Paper.`;
     } else if (computerSelection == playerSelection) {
-        return `Draw!! You both selected ${computerSelection}.`;
+        return `Go Again!! You both selected ${computerSelection}.`;
     } else {
         console.error('Invalid selection');
     }
