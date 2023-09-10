@@ -23,25 +23,26 @@ function playRound(computerSelection) {
     computerSelection = getComputerchoice();
 
     if (computerSelection == 'rock' && userSelection == 'scissors') {
-        winner = 'Computer';
         return `Oh no!! Computer wins!! Rock beats Scissors.`;
+
     } else if (computerSelection == 'scissors' && userSelection == 'paper') {
-        winner = 'Computer';
         return `We go again!! Computer wins!! Scissors beats Paper.`;
+
     } else if (computerSelection == 'paper' && userSelection == 'rock') {
-        winner = 'Computer';
         return `Try Again! Computer wins!! Paper beats Rock.`;
+
     } else if (computerSelection == 'rock' && userSelection == 'paper') {
-        winner = 'User';
         return `Lets Go! You win!! Paper beats Rock.`;
+
     } else if (computerSelection == 'scissors' && userSelection == 'rock') {
-        winner = 'User';
         return `Okay, I see you! You win!! Rock beats Scissors.`;
+
     } else if (computerSelection == 'paper' && userSelection == 'scissors') {
-        winner = 'User';
         return `Cool!!! You win!! Scissors beats Paper.`;
+
     } else if (computerSelection == userSelection) {
         return `It's a tie!! ${computerSelection} was selected.`;
+
     } else {
         return 'Invalid selection';
     }
@@ -52,6 +53,7 @@ function playRound(computerSelection) {
 // It has a for loop that has an incremental value `round` that increases to 5 rounds and ends once if reaches 5 rounds.
 
 function game() {
+    //Declared two variables that will store the player's scores
     let userScore = 0;
     let computerScore = 0;
 
@@ -60,22 +62,13 @@ function game() {
         const computerSelection = getComputerchoice(); // Corrected function name
         const result = playRound(userSelection, computerSelection);
 
-        // if (winner === 'Computer') {
-        //     computerScore++;
-        // } else if (winner === 'User') {
-        //     userScore++;
-        // } else {
-        //     userScore,
-        //     computerScore;
-        // }
-
         if (result.includes('Computer wins')) {
             computerScore++;
         } else if (result.includes('You win')) {
             userScore++;
         }
 
-        console.log(`Round ${round + 1}: ${result}: ${computerScore}:${userScore}`);
+        console.log(`Round ${round + 1}: ${result}:${computerScore}:${userScore}`);
     }
     if (computerScore > userScore) {
         let overallResult = 'Oh no!! We lost. Try again';
