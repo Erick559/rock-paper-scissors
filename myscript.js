@@ -4,7 +4,6 @@
 
 const choices = ['rock', 'paper', 'scissors'];
 let userSelection;
-let winner;
 // const randomChoices = Math.floor(Math.random() * choices.length);
 
 
@@ -68,14 +67,15 @@ function game() {
             userScore++;
         }
 
-        console.log(`Round ${round + 1}: ${result}:${computerScore}:${userScore}`);
+        console.log(`Round ${round + 1}: ${result}: ComputerScore: ${computerScore}: UserScore: ${userScore}`);
     }
+
     if (computerScore > userScore) {
-        let overallResult = 'Oh no!! We lost. Try again';
+        console.log('Oh no!! We lost. Try again');
     } else if (userScore > computerScore) {
-        overallResult = 'Lets go! We beat the machines';
+        console.log('Lets go! We beat the machines');
     } else {
-        overallResult = `It's a tie`;
+        console.log(`Its a tie, We didn't get them this time.`);
     }
     console.log(overallResult);
 }
