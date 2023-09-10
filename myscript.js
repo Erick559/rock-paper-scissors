@@ -3,70 +3,59 @@
 // The randomChoices variable stores the randomized selection; 
 
 const choices = ['rock', 'paper', 'scissors'];
+let userSelection;
+let winner;
 // const randomChoices = Math.floor(Math.random() * choices.length);
 
 
 // Function to get the computers randomized choice between rock,paper or scissors://
 
 function getComputerchoice() {
-    // let computerChoice = choices[randomChoices];
     const randomChoices = Math.floor(Math.random() * choices.length);
     return choices[randomChoices];
+
 }
+
 
 // Function that takes the user's choice and the computer's and returns the winner://
 
 function playRound(computerSelection) {
     computerSelection = getComputerchoice();
 
-    if (computerSelection == 'rock' && playerSelection == 'scissors') {
-        let winner = 'Computer';
-        return `You suck!! ${winner} wins!! Rock beats Scissors.`;
-    } else if (computerSelection == 'scissors' && playerSelection == 'paper') {
+    if (computerSelection == 'rock' && userSelection == 'scissors') {
         winner = 'Computer';
-        return `You suck!! ${winner} wins!! Scissors beats Paper.`;
-    } else if (computerSelection == 'paper' && playerSelection == 'rock') {
+        return `Oh no!! Computer wins!! Rock beats Scissors.`;
+    } else if (computerSelection == 'scissors' && userSelection == 'paper') {
         winner = 'Computer';
-        return `You suck!! ${winner} wins!! Paper beats Rock.`;
-    } else if (computerSelection == 'rock' && playerSelection == 'paper') {
+        return `Not again!! Computer wins!! Scissors beats Paper.`;
+    } else if (computerSelection == 'paper' && userSelection == 'rock') {
+        winner = 'Computer';
+        return `Try Again! Computer wins!! Paper beats Rock.`;
+    } else if (computerSelection == 'rock' && userSelection == 'paper') {
         winner = 'User';
-        return `Cool!!! ${winner} wins!! Paper beats Rock.`;
-    } else if (computerSelection == 'scissors' && playerSelection == 'rock') {
+        return `Lets Go! You win!! Paper beats Rock.`;
+    } else if (computerSelection == 'scissors' && userSelection == 'rock') {
         winner = 'User';
-        return `Cool!!! ${winner} wins!! Rock beats Scissors.`;
-    } else if (computerSelection == 'paper' && playerSelection == 'scissors') {
+        return `Okay, I see you! You win!! Rock beats Scissors.`;
+    } else if (computerSelection == 'paper' && userSelection == 'scissors') {
         winner = 'User';
-        return `Cool!!! ${winner} wins!! Scissors beats Paper.`;
-    } else if (computerSelection == playerSelection) {
+        return `Cool!!! You win!! Scissors beats Paper.`;
+    } else if (computerSelection == userSelection) {
         return `Go Again!! You both selected ${computerSelection}.`;
     } else {
-        console.error('Invalid selection');
+        return 'Invalid selection';
     }
 }
-
-// The user inserts their preferred move to play: Should be case insensitive;
-const playerSelection = prompt("Enter your play:").toLowerCase();
-
 
 
 // A five round game that takes the oneRound function and returns the winner for 5 rounds.
 // It has a for loop that has an incremental value `round` that increases to 5 rounds and ends once if reaches 5 rounds.
 
-// function game() {
-//     for (let round = 0; round < 5; round++) {
-
-//         const result = playRound();
-
-//         console.log(`Round ${round+1}: ${result}`);
-//     }
-// }
-
-
 function game() {
-    for (let round = 0; round <= 5; round++) {
-        const playerSelection = prompt("Enter your play:").toLowerCase();
+    for (let round = 0; round < 5; round++) {
+        userSelection = prompt("Enter your play:").toLowerCase();
         const computerSelection = getComputerchoice(); // Corrected function name
-        const result = playRound(playerSelection, computerSelection);
+        const result = playRound(userSelection, computerSelection);
 
         console.log(`Round ${round + 1}: ${result}`);
     }
