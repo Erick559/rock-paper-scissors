@@ -4,10 +4,9 @@
 
 const choices = ['rock', 'paper', 'scissors'];
 let userSelection;
-// const randomChoices = Math.floor(Math.random() * choices.length);
 
 
-// Function to get the computers randomized choice between rock,paper or scissors://
+// Function to get the computers randomized choice between rock,paper and scissors://
 
 function getComputerchoice() {
     const randomChoices = Math.floor(Math.random() * choices.length);
@@ -49,7 +48,7 @@ function playRound(computerSelection) {
 
 
 // A five round game that takes the oneRound function and returns the winner for 5 rounds.
-// It has a for loop that has an incremental value `round` that increases to 5 rounds and ends once if reaches 5 rounds.
+// It has a for loop that has an incremental value `round` that increases to 5 rounds and ends once it reaches 5 rounds.
 
 function game() {
     //Declared two variables that will store the player's scores
