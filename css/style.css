@@ -20,11 +20,21 @@ body{
     width:70rem;
     height:50rem;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 25px;
+    background: linear-gradient(0.25turn, #3f87a6, #878b83, #f69d3c);
 }
 
 .title{
     font-size: 3rem;
     font-weight: 700;
-    margin-top: 0.7rem;
+    margin-top: 1rem;
 }
+
+.player-section{
+    
+}
+
+p{
+    font-size: 3rem;
+}
+
