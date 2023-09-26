@@ -5,6 +5,15 @@
 const choices = ['rock', 'paper', 'scissors'];
 let userSelection;
 
+// Select and create the elements that are needed in the playRound() function;
+
+let userChoice = document.querySelector('.user')
+let compChoice = document.querySelector('.comp')
+let userScore = document.querySelector ('.user-score')
+let compScore = document.querySelector ('.comp-score')
+let btnRock = document.querySelector('.rock')
+let btnScissors = document.querySelector('.scissors')
+let btnPaper = document.querySelector('.paper')
 
 // Function to get the computers randomized choice between rock,paper and scissors://
 
@@ -50,33 +59,33 @@ function playRound(computerSelection) {
 // A five round game that takes the oneRound function and returns the winner for 5 rounds.
 // It has a for loop that has an incremental value `round` that increases to 5 rounds and ends once it reaches 5 rounds.
 
-function game() {
-    //Declared two variables that will store the player's scores
-    let userScore = 0;
-    let computerScore = 0;
+// function game() {
+//     //Declared two variables that will store the player's scores
+//     let userScore = 0;
+//     let computerScore = 0;
 
-    for (let round = 0; round < 5; round++) {
-        userSelection = prompt("Enter your play:").toLowerCase();
-        const computerSelection = getComputerchoice(); // Corrected function name
-        const result = playRound(userSelection, computerSelection);
+//     for (let round = 0; round < 5; round++) {
+//         userSelection = prompt("Enter your play:").toLowerCase();
+//         const computerSelection = getComputerchoice(); // Corrected function name
+//         const result = playRound(userSelection, computerSelection);
 
-        if (result.includes('Computer wins')) {
-            computerScore++;
-        } else if (result.includes('You win')) {
-            userScore++;
-        }
+//         if (result.includes('Computer wins')) {
+//             computerScore++;
+//         } else if (result.includes('You win')) {
+//             userScore++;
+//         }
 
-        console.log(`Round ${round + 1}: ${result}: ComputerScore: ${computerScore}: UserScore: ${userScore}`);
-    }
+//         console.log(`Round ${round + 1}: ${result}: ComputerScore: ${computerScore}: UserScore: ${userScore}`);
+//     }
 
-    if (computerScore > userScore) {
-        console.log('Oh no!! We lost. Try again');
-    } else if (userScore > computerScore) {
-        console.log('Lets go! We beat the machines');
-    } else {
-        console.log(`Its a tie, We didn't get them this time.`);
-    }
-    console.log(overallResult);
-}
+//     if (computerScore > userScore) {
+//         console.log('Oh no!! We lost. Try again');
+//     } else if (userScore > computerScore) {
+//         console.log('Lets go! We beat the machines');
+//     } else {
+//         console.log(`Its a tie, We didn't get them this time.`);
+//     }
+//     console.log(overallResult);
+// }
 
-console.log(game())
+// console.log(game())
