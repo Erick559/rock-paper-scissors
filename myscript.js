@@ -4,6 +4,8 @@
 
 const choices = ['rock', 'paper', 'scissors'];
 let userSelection;
+let computerScore = 0
+let playerScore = 0
 
 // Select and create the elements that are needed in the playRound() function;
 
@@ -14,6 +16,16 @@ let compScore = document.querySelector ('.comp-score')
 let btnRock = document.querySelector('.rock')
 let btnScissors = document.querySelector('.scissors')
 let btnPaper = document.querySelector('.paper')
+let spanCompScore = document.createElement('span')
+let spanUserScore = document.createElement('span')
+let spanCompChoice = document.createElement('span')
+let spanUserChoice = document.createElement('span')
+
+spanCompChoice.style.fontFamily = 'Indie Flower'
+spanUserChoice.style.fontFamily = 'indie Flower'
+
+spanCompChoice.style.fontSize = '30px'
+spanUserChoice.style.fontSize = '30px'
 
 // Function to get the computers randomized choice between rock,paper and scissors://
 
@@ -22,6 +34,20 @@ function getComputerchoice() {
     return choices[randomChoices];
 
 }
+
+btnRock.addEventListener('click',function playRound(){
+    let computerSelection = getComputerchoice();
+    userSelection = 'rock';
+    spanCompChoice.textContent = ` ${computerSelection}`
+    spanUserChoice.textContent = ` ${userSelection}`
+    userChoice.appendChild(spanUserChoice)
+    compChoice.appendChild(spanCompChoice)
+    if (playerScore < 5 || computerScore < 5){
+        playRound()
+    }
+})
+
+
 
 
 // Function that takes the user's choice and the computer's and returns the winner://
@@ -54,6 +80,10 @@ function playRound(computerSelection) {
         return 'Invalid selection';
     }
 }
+
+btnRock.addEventListener('click',function(){
+    userSelection = 'rock'
+})
 
 
 // A five round game that takes the oneRound function and returns the winner for 5 rounds.
