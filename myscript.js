@@ -47,6 +47,31 @@ btnRock.addEventListener('click',function playRound(){
     }
 })
 
+btnScissors.addEventListener('click',function playRound(){
+    let computerSelection = getComputerchoice();
+    userSelection = 'scissors';
+    spanCompChoice.textContent = ` ${computerSelection}`
+    spanUserChoice.textContent = ` ${userSelection}`
+    userChoice.appendChild(spanUserChoice)
+    compChoice.appendChild(spanCompChoice)
+    if (playerScore < 5 || computerScore < 5){
+        playRound()
+    }
+})
+
+btnPaper.addEventListener('click',function playRound(){
+    let computerSelection = getComputerchoice();
+    userSelection = 'paper';
+    spanCompChoice.textContent = ` ${computerSelection}`
+    spanUserChoice.textContent = ` ${userSelection}`
+    userChoice.appendChild(spanUserChoice)
+    compChoice.appendChild(spanCompChoice)
+    if (playerScore < 5 || computerScore < 5){
+        playRound()
+    }
+})
+
+
 
 
 
