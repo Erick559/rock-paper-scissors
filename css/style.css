@@ -66,7 +66,7 @@ p{
     gap: 5rem;
 }
 
-button{
+.selection{
     width:9rem;
     height:4.5rem;
     font-weight: 700;

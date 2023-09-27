@@ -3,9 +3,9 @@
 // The randomChoices variable stores the randomized selection; 
 
 const choices = ['rock', 'paper', 'scissors'];
-let userSelection;
 let computerScore = 0
 let playerScore = 0
+
 
 // Select and create the elements that are needed in the playRound() function;
 
@@ -16,10 +16,13 @@ let compScore = document.querySelector ('.comp-score')
 let btnRock = document.querySelector('.rock')
 let btnScissors = document.querySelector('.scissors')
 let btnPaper = document.querySelector('.paper')
+let winner = document.querySelector('.winner')
+let spanWinner = document.createElement('span')
 let spanCompScore = document.createElement('span')
 let spanUserScore = document.createElement('span')
 let spanCompChoice = document.createElement('span')
 let spanUserChoice = document.createElement('span')
+
 
 spanCompChoice.style.fontFamily = 'Indie Flower'
 spanUserChoice.style.fontFamily = 'indie Flower'
@@ -35,43 +38,61 @@ function getComputerchoice() {
 
 }
 
-btnRock.addEventListener('click',function playRound(){
+
+function getUserChoice(choice) {
+    let userSelection = choice;
+    return userSelection;
+  }
+  
+  // Add click event listeners to the buttons
+  btnRock.addEventListener('click', function() {
+    getUserChoice('rock');
+  });
+  
+  btnScissors.addEventListener('click', function() {
+    getUserChoice('scissors');
+  });
+  
+  btnPaper.addEventListener('click', function() {
+    getUserChoice('paper');
+  });
+
+if (getUserChoice() == 'scissors'){
+    console.log(true)
+}
+else{
+    console.log(false)
+}
+
+
+
+btnRock.addEventListener('click',function play(){
     let computerSelection = getComputerchoice();
-    userSelection = 'rock';
+    let userSelection = 'rock';
     spanCompChoice.textContent = ` ${computerSelection}`
     spanUserChoice.textContent = ` ${userSelection}`
     userChoice.appendChild(spanUserChoice)
     compChoice.appendChild(spanCompChoice)
-    if (playerScore < 5 || computerScore < 5){
-        playRound()
-    }
 })
-
-btnScissors.addEventListener('click',function playRound(){
+    
+    
+btnScissors.addEventListener('click',function play(){
     let computerSelection = getComputerchoice();
-    userSelection = 'scissors';
+    userSelection = 'scissors'
     spanCompChoice.textContent = ` ${computerSelection}`
     spanUserChoice.textContent = ` ${userSelection}`
     userChoice.appendChild(spanUserChoice)
     compChoice.appendChild(spanCompChoice)
-    if (playerScore < 5 || computerScore < 5){
-        playRound()
-    }
 })
-
-btnPaper.addEventListener('click',function playRound(){
+    
+btnPaper.addEventListener('click',function play(){
     let computerSelection = getComputerchoice();
-    userSelection = 'paper';
+    userSelection = 'paper'
     spanCompChoice.textContent = ` ${computerSelection}`
     spanUserChoice.textContent = ` ${userSelection}`
     userChoice.appendChild(spanUserChoice)
     compChoice.appendChild(spanCompChoice)
-    if (playerScore < 5 || computerScore < 5){
-        playRound()
-    }
 })
-
-
 
 
 
@@ -82,21 +103,26 @@ function playRound(computerSelection) {
 
     if (computerSelection == 'rock' && userSelection == 'scissors') {
         return `Oh no!! Computer wins!! Rock beats Scissors.`;
+    
 
     } else if (computerSelection == 'scissors' && userSelection == 'paper') {
         return `We go again!! Computer wins!! Scissors beats Paper.`;
+    
 
     } else if (computerSelection == 'paper' && userSelection == 'rock') {
         return `Try Again! Computer wins!! Paper beats Rock.`;
 
     } else if (computerSelection == 'rock' && userSelection == 'paper') {
         return `Lets Go! You win!! Paper beats Rock.`;
+    
 
     } else if (computerSelection == 'scissors' && userSelection == 'rock') {
         return `Okay, I see you! You win!! Rock beats Scissors.`;
+    
 
     } else if (computerSelection == 'paper' && userSelection == 'scissors') {
         return `Cool!!! You win!! Scissors beats Paper.`;
+    
 
     } else if (computerSelection == userSelection) {
         return `It's a tie!! ${computerSelection} was selected.`;
@@ -104,11 +130,13 @@ function playRound(computerSelection) {
     } else {
         return 'Invalid selection';
     }
+
 }
 
-btnRock.addEventListener('click',function(){
-    userSelection = 'rock'
-})
+
+
+
+
 
 
 // A five round game that takes the oneRound function and returns the winner for 5 rounds.
