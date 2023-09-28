@@ -52,8 +52,14 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
     playerChoice.appendChild(spanPlayerChoice)
     compChoice.appendChild(spanCompChoice)
 
-    let result = playRound()
-    console.log(result)
+    overallPlayerScore = getPlayerScore()
+    spanPlayerScore.textContent = ` ${overallPlayerScore}`
+    userScore.appendChild(spanPlayerScore)
+
+    console.log(overallPlayerScore)
+
+    // let result = playRound()
+    // console.log(result)
 
 
 }
@@ -74,6 +80,15 @@ function playRound(){
     }
 }
 
+function getPlayerScore(){
+    let result = playRound()
+
+    if(result.includes('win')){
+        playerScore++;
+    }
+
+    return `${playerScore}`
+}
 
 
 
