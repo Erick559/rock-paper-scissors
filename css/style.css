@@ -66,13 +66,13 @@ p{
     gap: 5rem;
 }
 
-.selection{
-    width:9rem;
+.rock,
+.paper,
+.scissors{
+    width:12rem;
     height:4.5rem;
     font-weight: 700;
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
 }
-
-

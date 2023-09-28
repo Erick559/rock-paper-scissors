@@ -5,30 +5,34 @@
 const choices = ['rock', 'paper', 'scissors'];
 let computerScore = 0
 let playerScore = 0
+let playerSelection;
+let computerSelection;
 
 
 // Select and create the elements that are needed in the playRound() function;
 
-let userChoice = document.querySelector('.user')
+let playerChoice = document.querySelector('.user')
 let compChoice = document.querySelector('.comp')
 let userScore = document.querySelector ('.user-score')
 let compScore = document.querySelector ('.comp-score')
-let btnRock = document.querySelector('.rock')
-let btnScissors = document.querySelector('.scissors')
-let btnPaper = document.querySelector('.paper')
+let btnChoice = document.querySelectorAll('[data-selection]')
 let winner = document.querySelector('.winner')
 let spanWinner = document.createElement('span')
 let spanCompScore = document.createElement('span')
-let spanUserScore = document.createElement('span')
+let spanPlayerScore = document.createElement('span')
 let spanCompChoice = document.createElement('span')
-let spanUserChoice = document.createElement('span')
+let spanPlayerChoice = document.createElement('span')
+
+
 
 
 spanCompChoice.style.fontFamily = 'Indie Flower'
-spanUserChoice.style.fontFamily = 'indie Flower'
+spanPlayerChoice.style.fontFamily = 'indie Flower'
 
 spanCompChoice.style.fontSize = '30px'
-spanUserChoice.style.fontSize = '30px'
+spanPlayerChoice.style.fontSize = '30px'
+
+
 
 // Function to get the computers randomized choice between rock,paper and scissors://
 
@@ -39,60 +43,74 @@ function getComputerchoice() {
 }
 
 
-function getUserChoice(choice) {
-    let userSelection = choice;
-    return userSelection;
-  }
-  
-  // Add click event listeners to the buttons
-  btnRock.addEventListener('click', function() {
-    getUserChoice('rock');
-  });
-  
-  btnScissors.addEventListener('click', function() {
-    getUserChoice('scissors');
-  });
-  
-  btnPaper.addEventListener('click', function() {
-    getUserChoice('paper');
-  });
-
-if (getUserChoice() == 'scissors'){
-    console.log(true)
+btnChoice.forEach(button => button.addEventListener('click', () => {
+    playerSelection = button.getAttribute('data-selection')
+    computerSelection = getComputerchoice();
+    
+    spanCompChoice.textContent = ` ${computerSelection}`
+    spanPlayerChoice.textContent = ` ${playerSelection}`
+    playerChoice.appendChild(spanPlayerChoice)
+    compChoice.appendChild(spanCompChoice)
 }
-else{
-    console.log(false)
-}
+))
 
 
 
-btnRock.addEventListener('click',function play(){
-    let computerSelection = getComputerchoice();
-    let userSelection = 'rock';
-    spanCompChoice.textContent = ` ${computerSelection}`
-    spanUserChoice.textContent = ` ${userSelection}`
-    userChoice.appendChild(spanUserChoice)
-    compChoice.appendChild(spanCompChoice)
-})
+
+// function getUserChoice(choice) {
+//     let userSelection = choice;
+//     return userSelection;
+//   }
+  
+//   // Add click event listeners to the buttons
+//   btnRock.addEventListener('click', function() {
+//     getUserChoice('rock');
+//   });
+  
+//   btnScissors.addEventListener('click', function() {
+//     getUserChoice('scissors');
+//   });
+  
+//   btnPaper.addEventListener('click', function() {
+//     getUserChoice('paper');
+//   });
+
+// if (getUserChoice() == 'scissors'){
+//     console.log(true)
+// }
+// else{
+//     console.log(false)
+// }
+
+
+
+// btnRock.addEventListener('click',function play(){
+//     let computerSelection = getComputerchoice();
+//     let userSelection = 'rock';
+//     spanCompChoice.textContent = ` ${computerSelection}`
+//     spanUserChoice.textContent = ` ${userSelection}`
+//     userChoice.appendChild(spanUserChoice)
+//     compChoice.appendChild(spanCompChoice)
+// })
     
     
-btnScissors.addEventListener('click',function play(){
-    let computerSelection = getComputerchoice();
-    userSelection = 'scissors'
-    spanCompChoice.textContent = ` ${computerSelection}`
-    spanUserChoice.textContent = ` ${userSelection}`
-    userChoice.appendChild(spanUserChoice)
-    compChoice.appendChild(spanCompChoice)
-})
+// btnScissors.addEventListener('click',function play(){
+//     let computerSelection = getComputerchoice();
+//     userSelection = 'scissors'
+//     spanCompChoice.textContent = ` ${computerSelection}`
+//     spanUserChoice.textContent = ` ${userSelection}`
+//     userChoice.appendChild(spanUserChoice)
+//     compChoice.appendChild(spanCompChoice)
+// })
     
-btnPaper.addEventListener('click',function play(){
-    let computerSelection = getComputerchoice();
-    userSelection = 'paper'
-    spanCompChoice.textContent = ` ${computerSelection}`
-    spanUserChoice.textContent = ` ${userSelection}`
-    userChoice.appendChild(spanUserChoice)
-    compChoice.appendChild(spanCompChoice)
-})
+// btnPaper.addEventListener('click',function play(){
+//     let computerSelection = getComputerchoice();
+//     userSelection = 'paper'
+//     spanCompChoice.textContent = ` ${computerSelection}`
+//     spanUserChoice.textContent = ` ${userSelection}`
+//     userChoice.appendChild(spanUserChoice)
+//     compChoice.appendChild(spanCompChoice)
+// })
 
 
 
