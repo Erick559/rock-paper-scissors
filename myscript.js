@@ -51,8 +51,28 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
     spanPlayerChoice.textContent = ` ${playerSelection}`
     playerChoice.appendChild(spanPlayerChoice)
     compChoice.appendChild(spanCompChoice)
+
+    let result = playRound()
+    console.log(result)
+
+
 }
 ))
+
+function playRound(){
+    if (playerSelection === computerSelection){
+        return('Draw')
+    }
+    else if(playerSelection =='rock'){
+        return (computerSelection == 'scissors') ? 'you win' : 'you lose'
+    }
+    else if(playerSelection =='scissors'){
+        return (computerSelection == 'paper') ? 'you win' : 'you lose'
+    }
+    else if(playerSelection =='paper'){
+        return (computerSelection == 'rock') ? 'you win' : 'you lose'
+    }
+}
 
 
 
@@ -116,40 +136,40 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
 
 // Function that takes the user's choice and the computer's and returns the winner://
 
-function playRound(computerSelection) {
-    computerSelection = getComputerchoice();
+// function playRound(computerSelection) {
+//     computerSelection = getComputerchoice();
 
-    if (computerSelection == 'rock' && userSelection == 'scissors') {
-        return `Oh no!! Computer wins!! Rock beats Scissors.`;
+//     if (computerSelection == 'rock' && userSelection == 'scissors') {
+//         return `Oh no!! Computer wins!! Rock beats Scissors.`;
     
 
-    } else if (computerSelection == 'scissors' && userSelection == 'paper') {
-        return `We go again!! Computer wins!! Scissors beats Paper.`;
+//     } else if (computerSelection == 'scissors' && userSelection == 'paper') {
+//         return `We go again!! Computer wins!! Scissors beats Paper.`;
     
 
-    } else if (computerSelection == 'paper' && userSelection == 'rock') {
-        return `Try Again! Computer wins!! Paper beats Rock.`;
+//     } else if (computerSelection == 'paper' && userSelection == 'rock') {
+//         return `Try Again! Computer wins!! Paper beats Rock.`;
 
-    } else if (computerSelection == 'rock' && userSelection == 'paper') {
-        return `Lets Go! You win!! Paper beats Rock.`;
+//     } else if (computerSelection == 'rock' && userSelection == 'paper') {
+//         return `Lets Go! You win!! Paper beats Rock.`;
     
 
-    } else if (computerSelection == 'scissors' && userSelection == 'rock') {
-        return `Okay, I see you! You win!! Rock beats Scissors.`;
+//     } else if (computerSelection == 'scissors' && userSelection == 'rock') {
+//         return `Okay, I see you! You win!! Rock beats Scissors.`;
     
 
-    } else if (computerSelection == 'paper' && userSelection == 'scissors') {
-        return `Cool!!! You win!! Scissors beats Paper.`;
+//     } else if (computerSelection == 'paper' && userSelection == 'scissors') {
+//         return `Cool!!! You win!! Scissors beats Paper.`;
     
 
-    } else if (computerSelection == userSelection) {
-        return `It's a tie!! ${computerSelection} was selected.`;
+//     } else if (computerSelection == userSelection) {
+//         return `It's a tie!! ${computerSelection} was selected.`;
 
-    } else {
-        return 'Invalid selection';
-    }
+//     } else {
+//         return 'Invalid selection';
+//     }
 
-}
+// }
 
 
 
