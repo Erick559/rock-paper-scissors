@@ -3,10 +3,13 @@
 // The randomChoices variable stores the randomized selection; 
 
 const choices = ['rock', 'paper', 'scissors'];
-let computerScore = 0
-let playerScore = 0
+let result;
 let playerSelection;
 let computerSelection;
+let gameWinner;
+let computerScore = 0
+let playerScore = 0
+
 
 
 // Select and create the elements that are needed in the playRound() function;
@@ -22,17 +25,6 @@ let spanCompScore = document.createElement('span')
 let spanPlayerScore = document.createElement('span')
 let spanCompChoice = document.createElement('span')
 let spanPlayerChoice = document.createElement('span')
-
-
-
-
-spanCompChoice.style.fontFamily = 'Indie Flower'
-spanPlayerChoice.style.fontFamily = 'indie Flower'
-
-spanCompChoice.style.fontSize = '30px'
-spanPlayerChoice.style.fontSize = '30px'
-
-
 
 // Function to get the computers randomized choice between rock,paper and scissors://
 
@@ -56,12 +48,15 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
     spanPlayerScore.textContent = ` ${overallPlayerScore}`
     userScore.appendChild(spanPlayerScore)
 
-    console.log(overallPlayerScore)
+    overallCompScore = getComputerScore()
+    spanCompScore.textContent = ` ${overallCompScore}`
+    compScore.appendChild(spanCompScore)
 
-    // let result = playRound()
-    // console.log(result)
+    overallWinner = getWinner()
+    
+    console.log(`${overallCompScore}: ${overallPlayerScore}`)
 
-
+    
 }
 ))
 
@@ -81,14 +76,61 @@ function playRound(){
 }
 
 function getPlayerScore(){
-    let result = playRound()
+    result = playRound()
 
     if(result.includes('win')){
         playerScore++;
     }
 
-    return `${playerScore}`
+    return playerScore
 }
+
+function getComputerScore(){
+    result = playRound()
+
+    if(result.includes('lose')){
+        computerScore++;
+    }
+
+    return computerScore
+}
+
+function getWinner(){
+    let winningScore = 5;
+    playerScore = getPlayerScore();
+    computerScore = getComputerScore()
+
+    if(playerScore == winningScore){
+        gameWinner = 'User'
+    }
+    else if(computerScore == winningScore){
+        gameWinner = 'Computer'
+    }
+
+    return gameWinner;
+}
+
+
+
+
+
+
+
+
+spanCompChoice.style.fontFamily = 'Indie Flower'
+spanPlayerChoice.style.fontFamily = 'indie Flower'
+
+spanCompChoice.style.fontSize = '30px'
+spanPlayerChoice.style.fontSize = '30px'
+
+spanPlayerScore.style.fontFamily=='Indie Flower'
+spanCompScore.style.fontFamily=='Indie Flower'
+
+spanPlayerScore.style.fontSize=='30px'
+spanCompScore.style.fontSize== '30px'
+
+spanPlayerScore.style.color=='red'
+spanCompScore.style.color=='red'
 
 
 
