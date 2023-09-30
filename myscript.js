@@ -88,48 +88,6 @@ function playRound() {
     }
 }
 
-// function getPlayerScore() {
-//     result = playRound()
-
-//     if (result.includes('win')) {
-//         playerScore++;
-//     }
-
-//     return playerScore
-
-// }
-
-// function getComputerScore() {
-//     result = playRound()
-
-//     if (result.includes('lose')) {
-//         return computerScore++;
-//     }
-
-//     return computerScore
-// }
-
-// function getWinner() {
-//     let winningScore = 5;
-//     playerScore = getPlayerScore();
-//     computerScore = getComputerScore()
-
-//     if (playerScore == winningScore) {
-//         gameWinner = 'User'
-//     } else if (computerScore == winningScore) {
-//         gameWinner = 'Computer'
-//     }
-
-//     return gameWinner;
-// }
-
-
-
-
-
-
-
-
 spanCompChoice.style.fontFamily = 'Indie Flower'
 spanPlayerChoice.style.fontFamily = 'indie Flower'
 
