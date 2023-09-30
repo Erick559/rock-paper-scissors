@@ -26,6 +26,7 @@ let spanCompScore = document.createElement('span')
 let spanPlayerScore = document.createElement('span')
 let spanCompChoice = document.createElement('span')
 let spanPlayerChoice = document.createElement('span')
+let btnReset = document.querySelector('#reset')
 
 // Function to get the computers randomized choice between rock,paper and scissors://
 
@@ -65,10 +66,10 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
 
     if (playerScore == winningScore) {
         gameWinner = 'We beat the computer!!'
-        resetGame();
+        resetScore();
     } else if (computerScore == winningScore) {
         gameWinner = 'Computer takes it all!'
-        resetGame();
+        resetScore();
     } else {
         gameWinner = ' '
     }
@@ -96,7 +97,7 @@ function playRound() {
 // Function that is intended to reset the game once the the winning score is attained.
 // It will be called in the button event handler
 
-function resetGame() {
+function resetScore() {
     playerScore = 0;
     computerScore = 0;
 
@@ -109,6 +110,10 @@ function resetGame() {
     spanPlayerChoice.textContent = '';
     spanCompChoice.textContent = '';
 }
+
+
+
+btnReset.addEventListener("click", () => resetScore());
 
 // Styles for the newly appended spans
 
