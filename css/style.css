@@ -21,7 +21,7 @@ body {
 .container {
     border: 3px solid white;
     width: 70rem;
-    height: 50rem;
+    height: 53rem;
     border-radius: 25px;
     background: linear-gradient(0.25turn, #3f87a6, #878b83, #f69d3c);
 }
@@ -74,4 +74,16 @@ p {
     border-radius: 15px;
     overflow: hidden;
     cursor: pointer;
+}
+
+#reset {
+    position: absolute;
+    left: 46%;
+    width: 9rem;
+    height: 4.5rem;
+    font-weight: 700;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 1.2rem;
 }
