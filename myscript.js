@@ -61,6 +61,19 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
 
     spanCompScore.textContent = ` ${computerScore}`
     compScore.appendChild(spanCompScore)
+
+    let winningScore = 5
+
+    if (playerScore == winningScore) {
+        gameWinner = 'We beat the computers!!'
+    } else if (computerScore == winningScore) {
+        gameWinner = 'Computer takes it all!'
+    } else {
+        gameWinner = ' '
+    }
+
+    spanWinner.textContent = ` ${gameWinner}`
+    winner.appendChild(spanWinner)
 }))
 
 function playRound() {
