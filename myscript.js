@@ -35,7 +35,6 @@ function getComputerchoice() {
 
 }
 
-
 btnChoice.forEach(button => button.addEventListener('click', () => {
     playerSelection = button.getAttribute('data-selection')
     computerSelection = getComputerchoice();
@@ -80,6 +79,8 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
 
 }))
 
+// Function that determines the winner for each individual round played
+
 function playRound() {
     if (playerSelection === computerSelection) {
         return ('Draw')
@@ -92,6 +93,9 @@ function playRound() {
     }
 }
 
+// Function that is intended to reset the game once the the winning score is attained.
+// It will be called in the button event handler
+
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
@@ -101,9 +105,12 @@ function resetGame() {
     spanWinner.textContent = '';
 
     // Clear player and computer choices from the DOM
+
     spanPlayerChoice.textContent = '';
     spanCompChoice.textContent = '';
 }
+
+// Styles for the newly appended spans
 
 spanCompChoice.style.fontFamily = 'Indie Flower'
 spanPlayerChoice.style.fontFamily = 'indie Flower'
