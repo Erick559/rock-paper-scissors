@@ -65,15 +65,19 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
     let winningScore = 5
 
     if (playerScore == winningScore) {
-        gameWinner = 'We beat the computers!!'
+        gameWinner = 'We beat the computer!!'
+        resetGame();
     } else if (computerScore == winningScore) {
         gameWinner = 'Computer takes it all!'
+        resetGame();
     } else {
         gameWinner = ' '
     }
 
     spanWinner.textContent = ` ${gameWinner}`
     winner.appendChild(spanWinner)
+
+
 }))
 
 function playRound() {
@@ -88,17 +92,34 @@ function playRound() {
     }
 }
 
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+
+    spanPlayerScore.textContent = ` ${playerScore}`;
+    spanCompScore.textContent = ` ${computerScore}`;
+    spanWinner.textContent = '';
+
+    // Clear player and computer choices from the DOM
+    spanPlayerChoice.textContent = '';
+    spanCompChoice.textContent = '';
+}
+
 spanCompChoice.style.fontFamily = 'Indie Flower'
 spanPlayerChoice.style.fontFamily = 'indie Flower'
 
 spanCompChoice.style.fontSize = '30px'
 spanPlayerChoice.style.fontSize = '30px'
 
-spanPlayerScore.style.fontFamily == 'Indie Flower'
-spanCompScore.style.fontFamily == 'Indie Flower'
+spanPlayerScore.style.fontFamily = 'Indie Flower'
+spanCompScore.style.fontFamily = 'Indie Flower'
 
-spanPlayerScore.style.fontSize == '30px'
-spanCompScore.style.fontSize == '30px'
+spanPlayerScore.style.fontSize = '40px'
+spanCompScore.style.fontSize = '40px'
 
-spanPlayerScore.style.color == 'red'
-spanCompScore.style.color == 'red'
+spanPlayerScore.style.color = 'red'
+spanCompScore.style.color = 'red'
+
+spanWinner.style.fontFamily = 'Indie Flower'
+spanWinner.style.fontSize = '40px'
+spanWinner.style.color = '#D2E0FB'
