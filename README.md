@@ -21,7 +21,8 @@ This is a simple web-based Rock, Paper, Scissors game created using HTML, CSS, a
 
 ## Demo
 
-![Demo GIF](link_to_demo_gif.gif)
+![Screenshot 2023-10-01 152019](https://github.com/Erick559/rock-paper-scissors/assets/99787246/274afc8a-a897-4b5f-a2f7-889dbbb84ed0)
+
 
 [Live Demo](link_to_live_demo)
 
