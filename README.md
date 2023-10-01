@@ -20,8 +20,6 @@ This is a simple web-based Rock, Paper, Scissors game created using HTML, CSS, a
 - JavaScript logic for determining the winner based on the chosen moves.
 
 ## Demo
-
-![Screenshot 2023-10-01 152019](https://github.com/Erick559/rock-paper-scissors/assets/99787246/274afc8a-a897-4b5f-a2f7-889dbbb84ed0)
 ![Demo image](https://github.com/Erick559/rock-paper-scissors/assets/99787246/162872c3-221b-41c5-a115-f7f27c9e2e80)
 
 
