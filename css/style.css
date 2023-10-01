@@ -76,9 +76,12 @@ p {
     cursor: pointer;
 }
 
+.reset {
+    display: flex;
+    justify-content: center;
+}
+
 #reset {
-    position: absolute;
-    left: 46%;
     width: 9rem;
     height: 4.5rem;
     font-weight: 700;
