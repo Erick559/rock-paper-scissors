@@ -112,7 +112,7 @@ function resetScore() {
 }
 
 
-
+// This button add functionality to the game by letting a player reset the entire game
 btnReset.addEventListener("click", () => resetScore());
 
 // Styles for the newly appended spans
