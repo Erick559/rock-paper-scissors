@@ -10,23 +10,46 @@ let gameWinner;
 let computerScore = 0
 let playerScore = 0
 
+// Statements that will be appended randomly once the player or computer wins
+
+const compWinningStatements = [
+    "The machine triumphs in a symphony of circuits and code!",
+    "Algorithms align, victory is mine!",
+    "You've been outsmarted by the silicon mind!",
+    "In the digital arena, the machine reigns supreme!",
+    "Electrons dance, victory's advance!",
+    "Error 404: Player's Victory Not Found. Computer dominates!",
+    "The computer outwits, outplays, and emerges as the ultimate tactician!"
+
+]
+
+const playerWinningStatements = [
+    "Human ingenuity prevails! You are the ultimate strategist!",
+    "You've cracked the code and claimed victory! Well played!",
+    "A triumph of flesh over circuits! Player wins the day!",
+    "In the battle of wits, you stand tall as the champion!",
+    "Humanity's brilliance shines through! Player claims victory!",
+    "You've unlocked the achievement of strategic supremacy!",
+    "Clever moves, brilliant strategy — player, you've conquered!"
+]
+
 
 
 
 // Select and create the elements that are needed in the playRound() function;
 
-let playerChoice = document.querySelector('.user')
-let compChoice = document.querySelector('.comp')
-let userScore = document.querySelector('.user-score')
-let compScore = document.querySelector('.comp-score')
-let btnChoice = document.querySelectorAll('[data-selection]')
-let winner = document.querySelector('.winner')
-let spanWinner = document.createElement('span')
-let spanCompScore = document.createElement('span')
-let spanPlayerScore = document.createElement('span')
-let spanCompChoice = document.createElement('span')
-let spanPlayerChoice = document.createElement('span')
-let btnReset = document.querySelector('#reset')
+const playerChoice = document.querySelector('.user')
+const compChoice = document.querySelector('.comp')
+const userScore = document.querySelector('.user-score')
+const compScore = document.querySelector('.comp-score')
+const btnChoice = document.querySelectorAll('[data-selection]')
+const winner = document.querySelector('.winner')
+const spanWinner = document.createElement('span')
+const spanCompScore = document.createElement('span')
+const spanPlayerScore = document.createElement('span')
+const spanCompChoice = document.createElement('span')
+const spanPlayerChoice = document.createElement('span')
+const btnReset = document.querySelector('#reset')
 
 // Function to get the computers randomized choice between rock,paper and scissors://
 
@@ -35,6 +58,8 @@ function getComputerchoice() {
     return choices[randomChoices];
 
 }
+
+// Event listener that will handle the entire game logic once the buttons are clicked
 
 btnChoice.forEach(button => button.addEventListener('click', () => {
     playerSelection = button.getAttribute('data-selection')
@@ -62,7 +87,7 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
     spanCompScore.textContent = ` ${computerScore}`
     compScore.appendChild(spanCompScore)
 
-    let winningScore = 5
+    const winningScore = 5
 
     if (playerScore == winningScore) {
         gameWinner = 'We beat the computer!!'
