@@ -90,10 +90,10 @@ btnChoice.forEach(button => button.addEventListener('click', () => {
     const winningScore = 5
 
     if (playerScore == winningScore) {
-        gameWinner = 'We beat the computer!!'
+        gameWinner = getRandomStatement(playerWinningStatements)
         resetScore();
     } else if (computerScore == winningScore) {
-        gameWinner = 'Computer takes it all!'
+        gameWinner = getRandomStatement(compWinningStatements)
         resetScore();
     } else {
         gameWinner = ' '
@@ -136,6 +136,11 @@ function resetScore() {
     spanCompChoice.textContent = '';
 }
 
+function getRandomStatement(array) {
+    const random = Math.floor(Math.random() * array.length)
+    return array[random]
+}
+
 
 // This button add functionality to the game by letting a player reset the entire game
 btnReset.addEventListener("click", () => resetScore());
@@ -158,5 +163,5 @@ spanPlayerScore.style.color = 'red'
 spanCompScore.style.color = 'red'
 
 spanWinner.style.fontFamily = 'Indie Flower'
-spanWinner.style.fontSize = '40px'
+spanWinner.style.fontSize = '30px'
 spanWinner.style.color = '#D2E0FB'
