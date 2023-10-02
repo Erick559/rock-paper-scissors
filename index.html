@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
-    <link rel="shortcut icon" type="image/svg" href="images/gamepad-solid.svg"/>
+    <link rel="shortcut icon" type="image/svg" href="images/gamepad-solid.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Tilt+Prism&display=swap" rel="stylesheet">
@@ -12,12 +13,13 @@
     <script src="myscript.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <div class="container">
         <h1 class="title">Rock-Paper-Scissors</h1>
         <div class="player-section">
-            <p class = 'player-selection user'>User: </p>
-            <p class = 'player-selection comp'>Computer: </p>
+            <p class='player-selection user'>User: </p>
+            <p class='player-selection comp'>Computer: </p>
             <div class="score">
                 <p class="user-score">User Score: </p>
                 <p class="comp-score">Computer Score: </p>
@@ -26,10 +28,15 @@
         </div>
 
         <div class="selections">
-            <button class = 'rock' data-selection="rock"><i class="fa-solid fa-hand-fist fa-bounce fa-3x"></i></button>
-            <button class = 'paper' data-selection="paper"><i class="fa-regular fa-hand fa-bounce fa-3x"></i></button>
-            <button class = 'scissors' data-selection="scissors"><i class="fa-solid fa-hand-peace fa-bounce fa-3x"></i></button>
+            <button class='rock' data-selection="rock"><i class="fa-solid fa-hand-fist fa-bounce fa-3x"></i></button>
+            <button class='paper' data-selection="paper"><i class="fa-regular fa-hand fa-bounce fa-3x"></i></button>
+            <button class='scissors' data-selection="scissors"><i class="fa-solid fa-hand-peace fa-bounce fa-3x"></i></button>
         </div>
+        <div class="reset">
+            <button id="reset"><i class="fa-solid fa-repeat fa-spin fa-2x"></i></button>
+        </div>
+
     </div>
 </body>
+
 </html>
